@@ -1,38 +1,42 @@
 import org.rocksdb.Options;
 import org.rocksdb.RocksDB;
 import org.rocksdb.RocksDBException;
+import org.rocksdb.RocksIterator;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
- * 数据库配置配置与连接
- * 数据库的插入、删除、查询
+ * 全表扫描数据
  */
-public class _1基本操作 {
+public class _2全表扫描 {
     static {
         RocksDB.loadLibrary();
     }
 
+    public static void insertData(RocksDB db, List<byte[]> keys, List<byte[]> values) throws RocksDBException {
+        for (int i = 0; i < keys.size(); i++) {
+            db.put(keys.get(i), values.get(i));
+        }
+    }
+    public static void scanData(RocksDB db){
+        RocksIterator iterator = db.newIterator();
+        for (iterator.seekToFirst(); iterator.isValid(); iterator.next()) {
+            byte[] key = iterator.key();
+            byte[] value = iterator.value();
+            System.out.println(new String(key) + " : " + new String(value));
+        }
+    }
+
     public static void main(String[] args) {
-        //db的配置类Options
-        try (final Options options = new Options().setCreateIfMissing(true)) {//数据库文件目录不存在则创建
-            //db的操作类
+        try (final Options options = new Options().setCreateIfMissing(false)) {//数据库文件目录不存在则创建
             try (final RocksDB db = RocksDB.open(options, "D:/Code/Java/JavaSkill/RocksDB/data")) {
-                byte[] key = "hello".getBytes();
-                //查找key
-                byte[] value = db.get(key);
-                if (value == null) {
-                    System.out.println(String.format("key:%s is missing", new String(key)));
-                    //存入key
-                    db.put(key, "world".getBytes());
-                } else {
-                    System.out.println(String.format("key:%s,value:%s", new String(key), new String(value)));
-                    Random random = new Random();
-                    if (random.nextInt() % 2 == 0) {
-                        //删除key
-                        db.delete(key);
-                    }
-                }
+                List<byte[]> keys = Arrays.asList("key1", "key2", "key3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
+                List<byte[]> values = Arrays.asList("value1", "value2", "value3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
+                insertData(db, keys, values);
+                scanData(db);
             } catch (RocksDBException e) {
                 e.printStackTrace();
             }

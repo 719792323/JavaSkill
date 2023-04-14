@@ -10,7 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>RocksDB</artifactId>
-
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.rocksdb/rocksdbjni -->
+        <dependency>
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <version>5.11.3</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
