@@ -19,6 +19,7 @@ public class _1基本操作 {
             //db的操作类
             try (final RocksDB db = RocksDB.open(options, "RocksDB/data")) {
                 byte[] key = "hello".getBytes();
+                //或者用keyMayExist也可以查看Key是否存在
                 //查找key
                 byte[] value = db.get(key);
                 if (value == null) {
