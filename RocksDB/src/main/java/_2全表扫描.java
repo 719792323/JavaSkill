@@ -33,9 +33,9 @@ public class _2全表扫描 {
     public static void main(String[] args) {
         try (final Options options = new Options().setCreateIfMissing(false)) {//数据库文件目录不存在则创建
             try (final RocksDB db = RocksDB.open(options, "D:/Code/Java/JavaSkill/RocksDB/data")) {
-                List<byte[]> keys = Arrays.asList("key1", "key2", "key3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
-                List<byte[]> values = Arrays.asList("value1", "value2", "value3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
-                insertData(db, keys, values);
+//                List<byte[]> keys = Arrays.asList("key1", "key2", "key3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
+//                List<byte[]> values = Arrays.asList("value1", "value2", "value3").stream().map(x -> x.getBytes()).collect(Collectors.toList());
+//                insertData(db, keys, values);
                 scanData(db);
             } catch (RocksDBException e) {
                 e.printStackTrace();
