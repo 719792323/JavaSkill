@@ -3,7 +3,7 @@ import org.rocksdb.*;
 /**
  * merge函数的作用是将一个新的值与一个已存在的键的值进行合并，得到一个新的值，然后将这个新的值存储在RocksDB中。
  * 合并的逻辑是由MergeOperator对象来定义的，你可以使用RocksDB提供的一些内置的MergeOperator，比如StringAppendOperator，它会将两个字符串拼接，
- * 也可以自己实现一个MergeOperator，。merge函数的好处是可以避免读取旧的值，直接进行合并操作，提高性能。
+ * 也可以自己实现一个MergeOperator，merge函数的好处是可以避免读取旧的值，直接进行合并操作，提高性能。
  */
 public class _6merge {
     public static Options options = new Options().setCreateIfMissing(false);

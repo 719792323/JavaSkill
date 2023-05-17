@@ -1,4 +1,4 @@
 .idea
-RocksDB/data
+data
 */target
 *.iml
