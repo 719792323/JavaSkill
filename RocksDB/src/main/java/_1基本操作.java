@@ -17,7 +17,7 @@ public class _1基本操作 {
         //db的配置类Options
         try (final Options options = new Options().setCreateIfMissing(true)) {//数据库文件目录不存在则创建
             //db的操作类
-            try (final RocksDB db = RocksDB.open(options, "D:/Code/Java/JavaSkill/RocksDB/data")) {
+            try (final RocksDB db = RocksDB.open(options, "RocksDB/data")) {
                 byte[] key = "hello".getBytes();
                 //或者用keyMayExist也可以查看Key是否存在
                 //查找key
