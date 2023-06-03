@@ -17,7 +17,7 @@ import org.rocksdb.*;
  * 注意：ConcurrentHashMap的snapshot修改不会生效。
  */
 public class _7快照 {
-    public static Options options = new Options().setCreateIfMissing(false);
+    public static Options options = new Options().setCreateIfMissing(true);
     public static RocksDB db;
 
     static {
