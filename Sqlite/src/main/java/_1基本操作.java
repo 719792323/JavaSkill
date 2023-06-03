@@ -3,8 +3,8 @@ import java.sql.*;
 
 //https://blog.csdn.net/qq_38322527/article/details/125717093
 public class _1基本操作 {
-    private static Connection connection;
-    private static String dbPath = "Sqlite/data/db.file";
+    public static Connection connection;
+    public static String dbPath = "Sqlite/data/db.file";
 
     //建立连接
     static {
@@ -133,7 +133,6 @@ public class _1基本操作 {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-//        insertValues(insertValuesSql);
-        select(selectSql);
+        insertValues(insertValuesSql);
     }
 }
