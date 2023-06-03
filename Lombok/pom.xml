@@ -23,6 +23,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.32</version>
         </dependency>
+        <!--这里使用的是logback，也可以换成log4j，Logback是log4j的改进-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
