@@ -13,6 +13,8 @@
         <module>Sqlite</module>
         <module>Lombok</module>
         <module>Slf4j</module>
+        <module>OkHttp</module>
+        <module>Jackson</module>
     </modules>
 
     <properties>
