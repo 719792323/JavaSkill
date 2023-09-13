@@ -15,9 +15,12 @@
 
 * redis主从模式
 * redis哨兵模式
+  * [详解](https://www.rstk.cn/news/1600247.html?action=onClick)
 * redis cluster模式
   * [三种集群模式介绍、cluster搭建参考](https://www.modb.pro/db/102339)
   * [cluster模式详解](https://zhuanlan.zhihu.com/p/347125538)
+  * [解析](https://blog.csdn.net/Heart_F/article/details/126251915)
+  * [解析](https://zhuanlan.zhihu.com/p/496621413)
 
 # Redis线程模型(进阶47p)
 
