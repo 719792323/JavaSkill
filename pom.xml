@@ -16,6 +16,12 @@
         <module>OkHttp</module>
         <module>Jackson</module>
         <module>Redis</module>
+        <module>Annotation</module>
+        <module>jsr269</module>
+        <module>JavaAssit</module>
+        <module>Cglib</module>
+        <module>javaagent</module>
+        <module>JavaAttach</module>
     </modules>
 
     <properties>
