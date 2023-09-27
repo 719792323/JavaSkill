@@ -22,6 +22,7 @@
         <module>Cglib</module>
         <module>javaagent</module>
         <module>JavaAttach</module>
+        <module>jvm</module>
     </modules>
 
     <properties>
