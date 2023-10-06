@@ -20,6 +20,10 @@ public class _2_类加载器 {
         System.out.println(AccessBridge.class.getClassLoader());//ExtClassLoader 扩展类加载器
         System.out.println(ArrayList.class.getClassLoader());//null 说明是bootstrap类加载器
 
+        //获取当前线程执行的代码的classloader
+//        Thread.currentThread().setContextClassLoader();//可以自定义设置classloader
+        System.out.println(Thread.currentThread().getContextClassLoader());//Launcher$AppClassLoader
+
         //获取boostrap加载器加载的类urls
         URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
         for (URL urL : urLs) {
