@@ -12,6 +12,7 @@
     <artifactId>MyCat</artifactId>
 
     <properties>
+        <video>12</video>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
