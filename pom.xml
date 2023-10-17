@@ -23,6 +23,8 @@
         <module>javaagent</module>
         <module>JavaAttach</module>
         <module>jvm</module>
+        <module>MyCat</module>
+        <module>sharding-jdbc</module>
     </modules>
 
     <properties>
