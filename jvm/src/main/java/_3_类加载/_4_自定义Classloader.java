@@ -3,6 +3,8 @@ package _3_类加载;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.util.Enumeration;
 
 public class _4_自定义Classloader {
 
@@ -35,7 +37,7 @@ class MyClassloader extends ClassLoader {
     public Class<?> loadClass(String name) throws ClassNotFoundException {
         return super.loadClass(name);
     }
-
+    //通过findClass去加载类可以避免双亲委派机制
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] classBytes = null;
@@ -56,6 +58,7 @@ class MyClassloader extends ClassLoader {
         }
         return defineClass(name, classBytes, 0, classBytes.length);
     }
+
 }
 
 
