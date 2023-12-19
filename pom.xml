@@ -25,6 +25,7 @@
         <module>jvm</module>
         <module>MyCat</module>
         <module>sharding-jdbc</module>
+        <module>mybatis</module>
     </modules>
 
     <properties>
