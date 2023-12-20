@@ -24,4 +24,24 @@ public class MyBatisTest {
         Assert.assertTrue(!allPeople.isEmpty());
         System.out.println(allPeople);
     }
+
+    @Test
+    public void getPeopleById() {
+        People people = peopleMapper.getPeopleById(2);
+        Assert.assertEquals("zjf", people.getName());
+        System.out.println(people);
+    }
+
+    @Test
+    public void testUpdatePeople() {
+        People people = new People(2, "zjf", 100);
+        Assert.assertTrue(peopleMapper.updatePeople(people));
+    }
+
+    @Test
+    public void testInsertPeople() {
+        People people = new People("djq", 33);
+        Assert.assertTrue(peopleMapper.insertPeople(people));
+        Assert.assertNotNull(people.getId());
+    }
 }

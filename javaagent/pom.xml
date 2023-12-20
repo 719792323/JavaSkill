@@ -32,8 +32,13 @@
                         <!--                        <manifestFile>-->
                         <!--                            src/main/resources/META-INF/MANIFEST.MF-->
                         <!--                        </manifestFile>-->
+                        <!--                        <manifestEntries>-->
+                        <!--                            <Premain-class>sj.agent._1_javaagent</Premain-class>-->
+                        <!--                            <Can-Redefine-Classes>true</Can-Redefine-Classes>-->
+                        <!--                            <Can-Retransform-Classes>true</Can-Retransform-Classes>-->
+                        <!--                        </manifestEntries>-->
                         <manifestEntries>
-                            <Premain-class>sj.agent._1_javaagent</Premain-class>
+                            <Premain-class>mybatis.MybatisAgent</Premain-class>
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
@@ -53,8 +58,13 @@
                         <!--                        <manifestFile>-->
                         <!--                            src/main/resources/META-INF/MANIFEST.MF-->
                         <!--                        </manifestFile>-->
+                        <!--                        <manifestEntries>-->
+                        <!--                            <Premain-class>sj.agent._1_javaagent</Premain-class>-->
+                        <!--                            <Can-Redefine-Classes>true</Can-Redefine-Classes>-->
+                        <!--                            <Can-Retransform-Classes>true</Can-Retransform-Classes>-->
+                        <!--                        </manifestEntries>-->
                         <manifestEntries>
-                            <Premain-class>sj.agent._1_javaagent</Premain-class>
+                            <Premain-class>mybatis.MybatisAgent</Premain-class>
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>

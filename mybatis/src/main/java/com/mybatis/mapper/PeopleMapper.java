@@ -9,4 +9,14 @@ import java.util.List;
 public interface PeopleMapper {
 
     List<People> getAllPeople();
+
+
+    People getPeopleById(Integer id);
+
+    boolean updatePeople(People people);
+
+    boolean insertPeople(People people);
+
+
 }
+

@@ -13,4 +13,9 @@ public class People {
     private Integer id;
     private String name;
     private Integer age;
+
+    public People(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }

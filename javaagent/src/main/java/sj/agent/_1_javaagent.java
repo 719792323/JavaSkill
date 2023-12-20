@@ -29,6 +29,7 @@ public class _1_javaagent {
         System.out.println("========");
         //修改字节码，记入方法开始时间
         instrumentation.addTransformer(new ClassFileTransformer() {
+            //className默认用/进行分割,一般需要用.进行替换处理
             @Override
             public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {//判断当前类是不是要修改的类
                 System.out.println(className);

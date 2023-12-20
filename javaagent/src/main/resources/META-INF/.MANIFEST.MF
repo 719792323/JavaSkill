@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Premain-Class: sj.agent._1_javaagent
+Premain-Class: mybatis.MybatisAgent
 Can-Redefine-Classes: false
 Can-Retransform-Classes: false

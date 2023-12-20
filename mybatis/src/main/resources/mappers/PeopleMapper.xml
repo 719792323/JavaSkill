@@ -3,9 +3,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace写对应mapper接口的全路径-->
 <mapper namespace="com.mybatis.mapper.PeopleMapper">
+    <!--useGeneratedKeys使用后会返回自增主键的值 keyProperty=“id” 表示将主键值赋值给实体类中的id字段-->
+    <insert id="insertPeople" useGeneratedKeys="true" keyProperty="id">
+        insert into people(name, age)
+        values (#{name}, #{age})
+    </insert>
+
+
+    <!--传过来的对象参数可以直接取属性-->
+    <update id="updatePeople">
+        update people
+        set age=#{age}
+        where id = #{id}
+    </update>
+
     <!-- id与对应接口方法名保持一致，resultType为pojo的路径，如果没有配置type-aliases-package则需要写全路径  -->
     <select id="getAllPeople" resultType="People">
         select *
         from people;
+    </select>
+
+    <!--参数用#{}来取-->
+    <select id="getPeopleById" resultType="People">
+        select *
+        from people
+        where id = #{id}
     </select>
 </mapper>
