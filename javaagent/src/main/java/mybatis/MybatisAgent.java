@@ -30,7 +30,7 @@ class MybatisSlowSqlTransformer implements ClassFileTransformer {
             try {
                 CtClass ctClass = CLASS_POOL.get(targetClass);
                 CtMethod method = ctClass.getDeclaredMethod(methodName);
-                method.insertBefore("mybatis.SlowSQL.start($0.boundSql.getSql());");
+                method.insertBefore("mybatis.SlowSQL.start($0.boundSql.getSql(),$1);");
                 method.insertAfter("mybatis.SlowSQL.end();");
                 return ctClass.toBytecode();
             } catch (Exception e) {
