@@ -1,5 +1,6 @@
 https://blog.csdn.net/mChenys/article/details/122901039
 https://www.w3cschool.cn/article/35230124.html
+https://blog.csdn.net/weixin_54902210/article/details/129562446
 1. javassist类库实现动态创建类、添加类的属性和方法、设置类的父类，以及修改类的方法等操作
 2. Javassist不允许删除方法或字段，但它允许更改名称。所以，如果一个方法是没有必要的，\
 可以通过调用CtMethod的setName和setModifiers中将其改为一个私有方法。

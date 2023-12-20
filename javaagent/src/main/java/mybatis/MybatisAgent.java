@@ -17,28 +17,29 @@ public class MybatisAgent {
 }
 
 class MybatisSlowSqlTransformer implements ClassFileTransformer {
-    private static final ClassPool CLASS_POOL = ClassPool.getDefault();
-    private static final String targetClass = "org.apache.ibatis.executor.statement.PreparedStatementHandler";
-    private static final String methodName = "query";
+    public static final ClassPool CLASS_POOL = ClassPool.getDefault();
+    public static final String targetClass = "org.apache.ibatis.executor.statement.PreparedStatementHandler";
+    public static final String methodName = "query";
 
+    /**
+     * 字节码加载到虚拟机前会进入这个方法
+     */
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
         if (className.replaceAll("/", ".").equals(targetClass)) {
             try {
                 CtClass ctClass = CLASS_POOL.get(targetClass);
                 CtMethod method = ctClass.getDeclaredMethod(methodName);
-//                method.insertBefore("String sql=((ClientPreparedStatement) ((HikariProxyPreparedStatement) ((PreparedStatementLogger) ((Proxy) statement).h).statement).delegate).asSql();"
-//                        + "System.out.println(\"sql:\"+sql);"
-//                        + "System.out.println(\"startTime:\"+System.currentTimeMillis());");
-                method.insertBefore("System.out.println(statement)");
-//                method.insertBefore("System.out.println(\"startTime:\"+System.currentTimeMillis());");
-                method.insertAfter("System.out.println(\"endTime:\"+System.currentTimeMillis());");
+                method.insertBefore("mybatis.SlowSQL.start($0.boundSql.getSql());");
+                method.insertAfter("mybatis.SlowSQL.end();");
                 return ctClass.toBytecode();
             } catch (Exception e) {
+                System.out.println(e);
                 throw new RuntimeException("failed to edit class", e);
             }
-
         }
-        return classfileBuffer;
+        return new byte[0];
     }
 }
+
+

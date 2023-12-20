@@ -54,7 +54,7 @@ public class _1_创建类 {
 
         /**
          * 在 Javassist 中，类 Javaassit.CtClass 表示 class 文件。
-         * 一个 GtClass (编译时类）对象可以处理一个 class 文件，ClassPool是 CtClass 对象的容器。
+         * 一个 CtClass (编译时类）对象可以处理一个 class 文件，ClassPool是 CtClass 对象的容器。
          * 它按需读取类文件来构造 CtClass 对象，并且保存 CtClass 对象以便以后使用。
          * 需要注意的是 ClassPool 会在内存中维护所有被它创建过的 CtClass，当 CtClass 数量过多时，会占用大量的内存，
          * API中给出的解决方案是有意识的调用CtClass的detach()方法以释放内存。
