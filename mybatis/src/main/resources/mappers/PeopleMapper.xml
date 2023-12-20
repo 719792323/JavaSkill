@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace写对应mapper接口的全路径-->
+<mapper namespace="com.mybatis.mapper.PeopleMapper">
+    <!-- id与对应接口方法名保持一致，resultType为pojo的路径，如果没有配置type-aliases-package则需要写全路径  -->
+    <select id="getAllPeople" resultType="People">
+        select *
+        from people;
+    </select>
+</mapper>

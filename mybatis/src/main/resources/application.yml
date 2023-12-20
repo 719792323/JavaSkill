@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /
+  port: 80
+
+mybatis:
+  # 配置mapper.xml的位置
+  mapper-locations: classpath:mappers/*xml
+  # 指定javabean所在包，在mapper.xml中可以省略resultType里的代码量
+  type-aliases-package: com.mybatis.pojo
+  # 配置mybatis日志输出
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.157.128:3306/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
