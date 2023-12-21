@@ -34,8 +34,7 @@ class MybatisSlowSqlTransformer implements ClassFileTransformer {
                 method.insertAfter("mybatis.SlowSQL.end();");
                 return ctClass.toBytecode();
             } catch (Exception e) {
-                System.out.println(e);
-                throw new RuntimeException("failed to edit class", e);
+                throw new RuntimeException(e);
             }
         }
         return new byte[0];
