@@ -16,6 +16,6 @@ mybatis:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.242:3306/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.157.128:3306/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
